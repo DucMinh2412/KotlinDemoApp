@@ -17,11 +17,19 @@ class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoHolder>() {
         notifyDataSetChanged()
     }
 
-    fun clearItems() { list.clear() }
+    fun clearItems() {
+        list.clear()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoHolder {
         return PhotoHolder(
-            DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.row_photo, parent, false))
+            DataBindingUtil.inflate(
+                LayoutInflater.from(parent.context),
+                R.layout.row_photo,
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: PhotoHolder, position: Int) {

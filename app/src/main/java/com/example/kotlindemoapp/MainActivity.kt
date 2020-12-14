@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.bumptech.glide.Glide
 import com.example.kotlindemoapp.adapter.PhotoAdapter
 import com.example.kotlindemoapp.databinding.ActivityMainBinding
 import com.example.kotlindemoapp.viewmodel.PhotoViewModel

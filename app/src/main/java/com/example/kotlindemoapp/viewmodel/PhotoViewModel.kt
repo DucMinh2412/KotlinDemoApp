@@ -17,11 +17,13 @@ class PhotoViewModel @Inject constructor(private val apiService: ApiService) : V
     fun getListPhoto(): MutableLiveData<List<Photo>> = mubListPhoto
 
     fun callApiGetListPhoto() {
-        disposable.add(repository.getListPhotos().subscribe(
-             // success
-            { mubListPhoto.value = it },
-            // error
-            { print(it.toString())}))
+        disposable.add(
+            repository.getListPhotos().subscribe(
+                // success
+                { mubListPhoto.value = it },
+                // error
+                { print(it.toString()) })
+        )
     }
 
     override fun onCleared() {
