@@ -16,11 +16,11 @@ kết nối giữa module và đối tượng thể hiện sự phụ thuộc (@
 -> chạy xuyên suốt ứng dụng
  */
 @Component(
-   modules = [(AndroidInjectionModule::class),
-      (ApiModule::class),
-      (ActivityModule::class),
-      (ViewModelModule::class)
-   ]
+    modules = [(AndroidInjectionModule::class),
+        (ApiModule::class),
+        (ActivityModule::class),
+        (ViewModelModule::class)
+    ]
 )
 @Singleton
 interface AppComponent {
