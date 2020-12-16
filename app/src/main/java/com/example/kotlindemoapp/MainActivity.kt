@@ -1,5 +1,6 @@
 package com.example.kotlindemoapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -21,18 +22,14 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var factory: PhotoViewModelFactory
 
-    lateinit var binding: ActivityMainBinding
-    lateinit var viewModel: PhotoViewModel
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var viewModel: PhotoViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        AndroidInjection.inject(this)
-        viewModel = ViewModelProviders.of(this, factory).get(PhotoViewModel::class.java)
-
-        // set adapter
-        binding.rvListPhoto.adapter = adapter
+        setDI()
+        setDataBindingAndViewModel()
 
         // call viewModel
         viewModel.callApiGetListPhoto()
@@ -41,5 +38,20 @@ class MainActivity : AppCompatActivity() {
                 adapter.addItems(it)
             }
         })
+
+        binding.fabAdd.setOnClickListener {
+            val intent = Intent(this, AddListActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun setDI() {
+        AndroidInjection.inject(this)
+    }
+
+    private fun setDataBindingAndViewModel() {
+        viewModel = ViewModelProviders.of(this, factory).get(PhotoViewModel::class.java)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.rvListPhoto.adapter = adapter
     }
 }

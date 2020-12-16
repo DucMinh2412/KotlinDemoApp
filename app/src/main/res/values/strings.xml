@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">KotlinDemoApp</string>
+    <string name="add_list">Add List</string>
+    <string name="album_id">Album Id</string>
+    <string name="id">Id</string>
+    <string name="url">url</string>
+    <string name="title">title</string>
+    <string name="thumbnail_url">thumbnail url</string>
+    <string name="add_item">Add Item</string>
+    <string name="show_list">Show List</string>
+    <string name="error_album_id">Not yet entered album id</string>
+    <string name="error_id">Not yet entered id</string>
+    <string name="error_url">Not yet entered url</string>
+    <string name="error_title">Not yet entered title</string>
+    <string name="error_thumbnail_url">Not yet entered thumbnail url</string>
 </resources>

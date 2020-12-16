@@ -15,4 +15,10 @@ class PhotoRepository(private val apiService: ApiService) {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
+
+    fun addItemListPhoto(photo: Photo): Observable<Photo> {
+        return apiService.addItemListPhoto(photo)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
 }
